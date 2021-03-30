@@ -50,11 +50,11 @@ app.post('/webhook', (req, res) => {
           }
           else if( webhook_event.game_play )
           {
-//               var senderId = webhook_event.sender.id; // Messenger sender id
-//               var playerId = webhook_event.game_play.player_id; // Instant Games player id
-//               var contextId = webhook_event.game_play.context_id; 
-//               var payload = webhook_event.game_play.payload;
-//               var playerWon = payload['playerWon'];
+              var playerId = webhook_event.game_play.player_id; // Instant Games player id
+              var contextId = webhook_event.game_play.context_id; 
+              var payload = webhook_event.game_play.payload;
+              handleMessage(senderPsid,{"text":"playerid :" + playerId + " contextId :" + contextId + " payload : " + payload});
+              // var playerWon = payload['playerWon'];
 //               if (playerWon) {
 //                 sendMessage(
 //                   senderId, 
@@ -62,7 +62,7 @@ app.post('/webhook', (req, res) => {
 //                   'Congratulations on your victory!', 
 //                   'Play Again'
 //                 );
-
+// 
 //               } else {
 //                 sendMessage(
 //                   senderId, 
